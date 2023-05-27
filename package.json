@@ -2,6 +2,8 @@
   "name": "lib-example",
   "private": true,
   "scripts": {
+    "start": "yarn workspace pluton-web start",
+    "build:web": "yarn workspace pluton-web build",
     "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(js|json|ts|tsx)\""
   },
   "workspaces": {

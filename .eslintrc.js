@@ -70,7 +70,7 @@ module.exports = {
           typescript: {},
           alias: {
             map: [
-              ["@my-site", "./sites/my-site/src"]
+              ["@web", "./sites/web/src"]
             ],
             extensions: [
               ".ts",

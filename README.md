@@ -19,7 +19,7 @@ cd packages/my-lib && yarn build
 Run the development server of the test project:
 
 ```bash
-cd sites/my-site && yarn dev
+cd sites/web && yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.

@@ -1,0 +1,25 @@
+.form{
+    margin-top: auto;
+    padding: 1rem 1rem;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    .text-input{
+        border: 1px solid var(--border-dark);
+        background-color: transparent;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        width: 100%;
+        display: block;
+        outline: none;
+        // font: inherit;
+        // line-height: 1.5rem;
+    }
+}
+@media screen and (max-width: 640px) {
+    .form {
+        padding: 0.5rem;
+    }
+}
