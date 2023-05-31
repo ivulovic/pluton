@@ -7,11 +7,12 @@ import "pluton-ui/src/index.css";
 import "./index.css";
 import { translationMessages } from "@web/translations";
 
-import DefaultLayout from "./components/Layout/Default";
+import DesktopLayout from "./components/Layout/Desktop";
+import ZenLayout from "./components/Layout/Zen";
 import { IntlProvider, defaultLocale } from "./core";
 import store from "./core/redux/utils/createStore";
-import AboutPage from "./pages/About";
-import HomePage from "./pages/Home";
+import AIPage from "./pages/AI";
+import Desktop from "./pages/Desktop";
 import { ThemeProvider } from "./providers/Theme";
 
 const container = document.getElementById("root");
@@ -22,17 +23,17 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <DefaultLayout>
-        <HomePage />
-      </DefaultLayout>
+      <DesktopLayout>
+        <Desktop />
+      </DesktopLayout>
     ),
   },
   {
-    path: "about",
+    path: "/ai",
     element: (
-      <DefaultLayout>
-        <AboutPage />
-      </DefaultLayout>
+      <ZenLayout>
+        <AIPage />
+      </ZenLayout>
     ),
   },
 ]);

@@ -1,0 +1,37 @@
+$animationTime: 1s;
+$dotSize: 0.75rem;
+
+.loader {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.loader span {
+    display: inline-block;
+    vertical-align: middle;
+    width: $dotSize;
+    height: $dotSize;
+    background: var(--text);
+    border-radius: $dotSize;
+    animation: loader $animationTime infinite alternate;
+}
+
+.loader span:nth-of-type(2) {
+    animation-delay: 0.2s;
+}
+
+.loader span:nth-of-type(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes loader {
+    0% {
+        opacity: 1;
+        transform: scale(0.5);
+    }
+
+    100% {
+        opacity: 0.1;
+        transform: scale(1);
+    }
+}

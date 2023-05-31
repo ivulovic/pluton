@@ -1,7 +1,7 @@
 {
   "name": "pluton-ui",
   "version": "0.0.1",
-  "main": "./src/lib/index.ts",
+  "main": "./src/index.ts",
   "scripts": {
     "start": "vite --host localhost --port 3000 --open",
     "build": "tsc && vite build",

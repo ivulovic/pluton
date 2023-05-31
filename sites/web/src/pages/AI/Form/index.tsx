@@ -1,14 +1,18 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useRef, useState } from "react";
 
 import "./style.scss";
-import { FormProps, Message, MessageType } from "../types";
+import { FormProps, Message, Role } from "../types";
 
 export default function Form(props: FormProps): JSX.Element {
+  const inputRef = useRef<any>();
   const getInitialState = (): Message => ({
-    id: Math.random().toString(36),
     content: "",
-    type: MessageType.Prompt,
+    role: Role.User,
   });
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
+
   const [state, setState] = useState(getInitialState());
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
@@ -22,7 +26,7 @@ export default function Form(props: FormProps): JSX.Element {
   };
   return (
     <form className="form" onSubmit={handleSubmit}>
-      <input autoComplete="off" value={state.content} placeholder="Send a message..." className="text-input" name="content" onChange={handleChange} />
+      <input ref={inputRef} autoComplete="off" value={state.content} placeholder="Informacije u sekundi..." className="text-input" name="content" onChange={handleChange} />
     </form>
   );
 }

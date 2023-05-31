@@ -1,11 +1,11 @@
-export const enum MessageType {
-  Prompt = "prompt",
+export const enum Role {
+  System = "system",
+  User = "user",
   Assistant = "assistant",
 }
 export interface Message {
-  id: string;
   content: string;
-  type: MessageType;
+  role: Role;
 }
 
 export interface ChatProps {
@@ -14,4 +14,9 @@ export interface ChatProps {
 
 export interface FormProps {
   onSubmit(message: Message): void;
+}
+
+export interface ChatState {
+  loading: boolean;
+  messages: Array<Message>;
 }

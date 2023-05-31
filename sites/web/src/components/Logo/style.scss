@@ -1,0 +1,27 @@
+.logo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Bruno Ace SC", cursive;
+  .logo-title {
+    font-size: 1.25rem;
+    color: var(--text);
+    font-weight: 700;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 0rem;
+    padding: 1.25rem 0;
+    svg {
+      position: relative;
+      font-size: 1.5rem;
+      transform: rotate(-45deg);
+    }
+    &.inline {
+      gap: 0.65rem;
+      flex-direction: row;
+    }
+  }
+}
