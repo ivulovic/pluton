@@ -22,12 +22,24 @@ export default function Form(props: FormProps): JSX.Element {
 
   const handleSubmit = (e: any): void => {
     e.preventDefault();
-    props.onSubmit(state);
-    setState(getInitialState());
+    if (state.content?.trim().length) {
+      props.onSubmit(state);
+      setState(getInitialState());
+    }
   };
   return (
     <form className="form" onSubmit={handleSubmit}>
-      <input ref={inputRef} autoComplete="off" value={state.content} placeholder="Informacije u sekundi..." className="text-input" name="content" onChange={handleChange} />
+      <input
+        // rows={1}
+        type="text"
+        ref={inputRef}
+        autoComplete="off"
+        value={state.content}
+        placeholder="Informacije u sekundi..."
+        className="text-input"
+        name="content"
+        onChange={handleChange}
+      />
     </form>
   );
 }

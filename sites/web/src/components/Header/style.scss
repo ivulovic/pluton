@@ -38,7 +38,7 @@ header.header {
         cursor: pointer;
         text-decoration: none;
         display: flex;
-        padding: 1rem 0.5rem;
+        padding: 1.5rem 0.5rem;
         font-weight: 600;
         font-size: 0.85rem;
         align-items: center;
@@ -100,7 +100,7 @@ header.header {
       right: 0;
       height: 100%;
       align-items: center;
-      padding: 1rem 0rem;
+      padding: 1.5rem 0rem;
 
       background-color: transparent;
       border: none;
@@ -135,7 +135,7 @@ header.header {
         align-items: center;
         gap: 0.25rem;
         font-size: 1.1rem;
-        padding: 1rem 1rem;
+        padding: 1.5rem 1rem;
         background-color: var(--background-backdrop);
         align-items: center;
         display: flex;
@@ -149,7 +149,7 @@ header.header {
       }
 
       .nav-item {
-        padding: 1rem;
+        padding: 1.5rem 1rem;
         border-bottom: 1px solid var(--border-light);
 
         &.active {
