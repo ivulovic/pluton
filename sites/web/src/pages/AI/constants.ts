@@ -10,55 +10,5 @@ export const initialState: ChatState = {
       role: Role.System,
       content: "Zdravo! Ja sam tvoj asistent Pluton. Kako mogu da pomognem?",
     },
-    {
-      id: Math.random().toString(36),
-      role: Role.System,
-      content: "Zdravo! Ja sam tvoj asistent Pluton. Kako mogu da pomognem?",
-    },
-    {
-      id: Math.random().toString(36),
-      role: Role.System,
-      content: "Zdravo! Ja sam tvoj asistent Pluton. Kako mogu da pomognem?",
-    },
-    {
-      id: Math.random().toString(36),
-      role: Role.System,
-      content: "Zdravo! Ja sam tvoj asistent Pluton. Kako mogu da pomognem?",
-    },
-    {
-      id: Math.random().toString(36),
-      role: Role.System,
-      content: "Zdravo! Ja sam tvoj asistent Pluton. Kako mogu da pomognem?",
-    },
-    {
-      id: Math.random().toString(36),
-      role: Role.System,
-      content: "Zdravo! Ja sam tvoj asistent Pluton. Kako mogu da pomognem?",
-    },
-    {
-      id: Math.random().toString(36),
-      role: Role.System,
-      content: "Zdravo! Ja sam tvoj asistent Pluton. Kako mogu da pomognem?",
-    },
-    {
-      id: Math.random().toString(36),
-      role: Role.System,
-      content: "Zdravo! Ja sam tvoj asistent Pluton. Kako mogu da pomognem?",
-    },
-    {
-      id: Math.random().toString(36),
-      role: Role.System,
-      content: "Zdravo! Ja sam tvoj asistent Pluton. Kako mogu da pomognem?",
-    },
-    {
-      id: Math.random().toString(36),
-      role: Role.System,
-      content: "Zdravo! Ja sam tvoj asistent Pluton. Kako mogu da pomognem?",
-    },
-    {
-      id: Math.random().toString(36),
-      role: Role.System,
-      content: "Zdravo! Ja sam tvoj asistent Pluton. Kako mogu da pomognem?",
-    },
   ],
 };
