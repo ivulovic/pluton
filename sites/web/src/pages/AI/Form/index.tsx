@@ -6,6 +6,7 @@ import { FormProps, Message, Role } from "../types";
 export default function Form(props: FormProps): JSX.Element {
   const inputRef = useRef<any>();
   const getInitialState = (): Message => ({
+    id: Math.random().toString(36),
     content: "",
     role: Role.User,
   });

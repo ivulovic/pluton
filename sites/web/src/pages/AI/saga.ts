@@ -1,23 +1,22 @@
-import { put, takeEvery, call, SagaResult, PayloadAction, select } from "@web/core";
+import { put, takeEvery, call, SagaResult, select } from "@web/core";
 import { makePostReq, request } from "@web/core/request";
 
 import { selectMessages } from "./selectors";
 import { actions } from "./slice";
 import { Message } from "./types";
 
-export function* promptHandler(action: PayloadAction<Message>): SagaResult {
+export function* promptHandler(): SagaResult {
   try {
-    const url = `/api/ai`;
-    const messages = yield select(selectMessages);
+    const url = `/api/ai/stream`;
+    const messages: Array<Message> = yield select(selectMessages);
     const response = yield call(
       request,
       url,
       makePostReq({
-        messages: [...messages, action.payload],
+        messages: messages.map(({ content, role }) => ({ content, role })),
       }),
     );
     if (response) {
-      console.log("r", response);
       yield put(actions.promptDone(response.message));
     }
   } catch (e) {

@@ -4,6 +4,7 @@ export const enum Role {
   Assistant = "assistant",
 }
 export interface Message {
+  id: string;
   content: string;
   role: Role;
 }
