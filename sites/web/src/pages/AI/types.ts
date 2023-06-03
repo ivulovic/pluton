@@ -26,6 +26,4 @@ export interface ChatState {
 
 export interface OptionProps {
   onClose(): void;
-  onSubmit(params: { name: string }): void;
-  onConversationRemove(id: string): void;
 }

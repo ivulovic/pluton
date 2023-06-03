@@ -1,4 +1,4 @@
-export const PERSISTED_SCOPE = "persistedKey";
+export const PERSISTED_SCOPE = "persisted";
 
 export const initialState = {
   conversations: {},

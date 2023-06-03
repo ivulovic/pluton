@@ -1,4 +1,4 @@
-.home-page{
+.ai-page{
     height: 100%;
     display: flex;
     justify-content: space-between;
@@ -6,7 +6,6 @@
     position: relative;
     .zoom{
         filter: blur(2px);
-        // transition: filter 0.3s ease-in-out;
         pointer-events: none;
         touch-action: none;
     }

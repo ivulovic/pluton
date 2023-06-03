@@ -22,4 +22,4 @@ const slice = createSlice({
 
 export const { actions } = slice;
 
-export default createPersistedSlice("persistedKey", slice.reducer);
+export default createPersistedSlice(PERSISTED_SCOPE, slice.reducer);

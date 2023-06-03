@@ -2,8 +2,6 @@ import { useEffect, useMemo, useState } from "react";
 
 import { useDispatch, useReducer, useSaga, useSelector } from "@web/core";
 
-import { actions as persistedActions } from "../../slices/persisted";
-
 import Chat from "./Chat";
 import { CHAT_SCOPE } from "./constants";
 import Form from "./Form";
@@ -31,6 +29,7 @@ export default function AIPage(): JSX.Element {
 
   const messages = useSelector(selectMessages);
   const dispatch = useDispatch();
+
   const handleSubmit = (message: Message): void => {
     dispatch(actions.prompt(message));
   };
@@ -44,34 +43,18 @@ export default function AIPage(): JSX.Element {
     };
   }, []);
 
-  const handleOpenOptions = (): void => {
-    setShowOptions(true);
-  };
+  const onOpenOptions = (): void => setShowOptions(true);
 
-  const handleCloseOptions = (): void => {
+  const onCloseOptions = (): void => {
     setShowOptions(false);
   };
 
-  const handleOptionsSubmit = (conversation: { name: string }): void => {
-    dispatch(
-      persistedActions.storeConversation({
-        id: Math.random().toString(36),
-        name: conversation.name,
-        messages: messages,
-      }),
-    );
-  };
-
-  const handleConversationRemove = (id: string): void => {
-    dispatch(persistedActions.removeConversation({ id }));
-  };
-
   return (
-    <div className="home-page">
+    <div className="ai-page">
       <Chat messages={messages} className={showOptions ? "zoom" : ""} />
-      {showOptions && <Options onConversationRemove={handleConversationRemove} onSubmit={handleOptionsSubmit} onClose={handleCloseOptions} />}
+      {showOptions && <Options onClose={onCloseOptions} />}
       <div className={`${showOptions ? "zoom" : ""}`}>
-        <Form handleOpenOptions={handleOpenOptions} onSubmit={handleSubmit} />
+        <Form handleOpenOptions={onOpenOptions} onSubmit={handleSubmit} />
       </div>
     </div>
   );

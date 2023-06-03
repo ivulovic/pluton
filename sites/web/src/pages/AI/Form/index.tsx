@@ -13,7 +13,8 @@ export default function Form(props: FormProps): JSX.Element {
     role: Role.User,
   });
   useEffect(() => {
-    inputRef.current?.focus();
+    // make this part of settings
+    // inputRef.current?.focus();
   }, []);
 
   const [state, setState] = useState(getInitialState());
