@@ -1,23 +1,26 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
+
+import useOutsideClick from "@web/hooks/useOutsideClick";
 
 import Logo from "../Logo";
 
 import { HeaderProps } from "./types";
+
 import "./style.scss";
 
 export default function Header(props: HeaderProps): JSX.Element {
   const { type = "default" } = props;
-  // const location = useLocation();
-  // const navbarRef = useRef();
+  const location = useLocation();
+  const navbarRef = useRef<any>();
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
 
-  // useEffect(() => {
-  //   setIsNavbarOpen(false);
-  // }, [location]);
+  useEffect(() => {
+    setIsNavbarOpen(false);
+  }, [location]);
 
-  //   useOnClickOutside(navbarRef, () => setIsNavbarOpen(false));
+  useOutsideClick(navbarRef, () => setIsNavbarOpen(false));
   const HamburgerMenu = (): JSX.Element => (
     <button onClick={(): void => setIsNavbarOpen(!isNavbarOpen)} className="nav-icon mobile">
       <RxHamburgerMenu width={24} height={24} />
@@ -72,10 +75,7 @@ export default function Header(props: HeaderProps): JSX.Element {
           <Links />
         </div>
         <HamburgerMenu />
-        <div
-          className={`nav-wrapper mobile ${isNavbarOpen ? "opened" : "closed"}`}
-          // ref={navbarRef}
-        >
+        <div className={`nav-wrapper mobile ${isNavbarOpen ? "opened" : "closed"}`} ref={navbarRef}>
           <div className="nav-header">
             <HamburgerMenu />
             {/* <FormattedMessage id="navigation" /> */}
