@@ -7,6 +7,10 @@ import { PersistedState } from "./types";
 // @ts-ignore
 export const selectState = (state: IRootState): PersistedState => state?.[PERSISTED_SCOPE] || initialState;
 
+export const selectDeviceId = createSelector([selectState], (state: PersistedState) => {
+  return state.device.id;
+});
+
 export const selectConversations = createSelector([selectState], (state: PersistedState) => {
   return Object.values(state.conversations)
     .filter((x) => x)

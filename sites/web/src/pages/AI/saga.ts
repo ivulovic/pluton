@@ -1,5 +1,6 @@
 import { put, takeEvery, call, SagaResult, select } from "@web/core";
 import { makePostReq, request } from "@web/core/request";
+import { selectDeviceId } from "@web/slices/persisted/selectors";
 
 import { selectMessages } from "./selectors";
 import { actions } from "./slice";
@@ -9,11 +10,13 @@ export function* promptHandler(): SagaResult {
   try {
     const url = `/api/ai/stream`;
     const messages: Array<Message> = yield select(selectMessages);
+    const deviceId: string = yield select(selectDeviceId);
     const response = yield call(
       request,
       url,
       makePostReq({
         messages: messages.map(({ content, role }) => ({ content, role })),
+        deviceId,
       }),
     );
     if (response) {

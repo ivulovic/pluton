@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 
 import { useDispatch, useReducer, useSaga, useSelector } from "@web/core";
+import { selectDeviceId } from "@web/slices/persisted/selectors";
 
 import Chat from "./Chat";
 import { CHAT_SCOPE } from "./constants";
@@ -16,6 +17,8 @@ import "./style.scss";
 export default function AIPage(): JSX.Element {
   useReducer({ key: CHAT_SCOPE, reducer });
   useSaga({ key: CHAT_SCOPE, saga: saga });
+
+  const deviceId = useSelector(selectDeviceId);
 
   const [showOptions, setShowOptions] = useState(false);
 
@@ -35,7 +38,7 @@ export default function AIPage(): JSX.Element {
   };
 
   useEffect(() => {
-    aiStream.addEventListener("ai", (e) => {
+    aiStream.addEventListener(deviceId, (e) => {
       dispatch(actions.onStreamMessage(JSON.parse(e.data)));
     });
     return () => {

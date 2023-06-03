@@ -6,6 +6,11 @@ export interface Conversation {
   messages: Array<Message>;
 }
 
+export interface Device {
+  id: string;
+}
+
 export interface PersistedState {
+  device: Device;
   conversations: Record<string, Conversation>;
 }
