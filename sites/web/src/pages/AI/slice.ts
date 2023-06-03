@@ -15,6 +15,10 @@ const slice = createSlice({
       state.loading = false;
       state.messages = [...state.messages, action.payload];
     },
+    setMessages: (state, action: PayloadAction<Array<Message>>) => {
+      state.loading = false;
+      state.messages = action.payload;
+    },
     onStreamMessage: (state, action: PayloadAction<Message>) => {
       state.loading = false;
       const existingMessage = state.messages.find((x) => x.id === action.payload.id);

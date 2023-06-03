@@ -1,6 +1,8 @@
 import { ChangeEvent, useEffect, useRef, useState } from "react";
+import { BsThreeDots } from "react-icons/bs";
 
 import "./style.scss";
+
 import { FormProps, Message, Role } from "../types";
 
 export default function Form(props: FormProps): JSX.Element {
@@ -40,6 +42,9 @@ export default function Form(props: FormProps): JSX.Element {
         name="content"
         onChange={handleChange}
       />
+      <button type="button" className="options-button" onClick={props.handleOpenOptions}>
+        <BsThreeDots />
+      </button>
     </form>
   );
 }

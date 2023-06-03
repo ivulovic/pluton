@@ -1,11 +1,25 @@
-import { createSlice, createPersistedSlice } from "@web/core";
+import { createSlice, createPersistedSlice, PayloadAction } from "@web/core";
+import { Message } from "@web/pages/AI/types";
+
+import { PERSISTED_SCOPE, initialState } from "./constants";
 
 const slice = createSlice({
-  name: "persistedKey",
-  initialState: { persisted: "persisted" },
+  name: PERSISTED_SCOPE,
+  initialState: initialState,
   reducers: {
-    hello: () => {},
+    storeConversation: (state, action: PayloadAction<{ id: string; name: string; messages: Array<Message> }>) => {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      state.conversations[action.payload.id] = action.payload;
+    },
+    removeConversation: (state, action: PayloadAction<{ id: string }>) => {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      state.conversations[action.payload.id] = undefined;
+    },
   },
 });
+
+export const { actions } = slice;
 
 export default createPersistedSlice("persistedKey", slice.reducer);

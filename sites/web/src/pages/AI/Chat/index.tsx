@@ -10,14 +10,14 @@ import { ChatProps, Role } from "../types";
 import "./style.scss";
 
 export default function Chat(props: ChatProps): JSX.Element {
-  const { messages } = props;
+  const { messages, className = "" } = props;
   const messagesRefs = useRef<any>([]);
   const loading = useSelector(selectLoading);
   useEffect(() => {
     messagesRefs.current[messages.length - 1]?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
   return (
-    <div className="chat">
+    <div className={`chat ${className}`}>
       {messages.map((msg, i) => {
         return (
           <div

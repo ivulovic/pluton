@@ -11,13 +11,21 @@ export interface Message {
 
 export interface ChatProps {
   messages: Array<Message>;
+  className?: string;
 }
 
 export interface FormProps {
   onSubmit(message: Message): void;
+  handleOpenOptions(): void;
 }
 
 export interface ChatState {
   loading: boolean;
   messages: Array<Message>;
+}
+
+export interface OptionProps {
+  onClose(): void;
+  onSubmit(params: { name: string }): void;
+  onConversationRemove(id: string): void;
 }

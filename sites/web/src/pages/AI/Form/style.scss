@@ -18,10 +18,27 @@
         outline: none;
         resize: none;
     }
+
+    .options-button {
+        flex-grow: 1;
+        background-color: transparent;
+        border: none;
+        color: var(--text);
+        background-color: var(--border);
+        margin-left: 0.5rem;
+        border-radius: 0.25rem;
+        // width: 3rem;
+        cursor: pointer;
+        padding: 1rem;
+        border-radius: 50%;
+        // box-sizing: content-box;
+    }
+
 }
 @media screen and (max-width: 640px) {
     .form {
-        padding: 0.25rem 0.25rem;
+        // padding: 0.25rem 0.25rem;
+        padding: 0;
         border-top: 1px solid var(--border);
         position: fixed;
         bottom: 0;
@@ -31,6 +48,11 @@
         background-color: var(--background-backdrop);
         .text-input{
             border: none;
+            padding: 0.5rem 0.5rem;
+        }
+        .options-button{
+            border-radius: 0;
+            margin: 0;
         }
     }
 }
