@@ -5,7 +5,7 @@ import "./style.scss";
 
 export default function DefaultLayout({ children }: PropsWithChildren<unknown>): JSX.Element {
   return (
-    <div>
+    <div className="default-layout">
       <Header type="default" />
       <div className="page-content">{children}</div>
     </div>

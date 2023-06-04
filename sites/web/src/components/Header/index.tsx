@@ -41,9 +41,6 @@ export default function Header(props: HeaderProps): JSX.Element {
   //     <NavLink to="/health" className="nav-item">
   //       Health
   //     </NavLink>
-  //     <NavLink to="/open-source" className="nav-item">
-  //       Open Source
-  //     </NavLink>
   //     <NavLink to="/sign-in" className="nav-item">
   //       Sign In
   //     </NavLink>
@@ -58,6 +55,10 @@ export default function Header(props: HeaderProps): JSX.Element {
   //     </NavLink> */}
       <NavLink to="/ai" className="nav-item">
         Pluton AI
+      </NavLink>
+
+      <NavLink to="/open-source" className="nav-item">
+        Otvoreni podaci
       </NavLink>
       {/* <NavLink to="/blog" className="nav-item">
         Blog

@@ -38,7 +38,7 @@ header.header {
         cursor: pointer;
         text-decoration: none;
         display: flex;
-        padding: 1.5rem 0.5rem;
+        padding: 1.25rem 0.5rem;
         font-weight: 600;
         font-size: 0.85rem;
         align-items: center;
@@ -94,13 +94,13 @@ header.header {
 
     .nav-icon.mobile {
       display: flex;
-      // position: fixed;
       right: 0;
       cursor: pointer;
       right: 0;
       height: 100%;
       align-items: center;
-      padding: 1.5rem 0rem;
+      padding: 1.15rem 0rem;
+      font-size: 1.15rem;
 
       background-color: transparent;
       border: none;
@@ -134,14 +134,15 @@ header.header {
         display: flex;
         align-items: center;
         gap: 0.25rem;
-        font-size: 1.1rem;
-        padding: 1.5rem 1rem;
+        padding: 1.25rem 1rem;
         background-color: var(--background-backdrop);
         align-items: center;
         display: flex;
 
         .nav-icon {
           padding: 0;
+
+          font-size: 1.15rem;
           position: static;
           align-items: center;
           display: flex;
@@ -149,7 +150,7 @@ header.header {
       }
 
       .nav-item {
-        padding: 1.5rem 1rem;
+        padding: 1.25rem 1rem;
         border-bottom: 1px solid var(--border-light);
 
         &.active {

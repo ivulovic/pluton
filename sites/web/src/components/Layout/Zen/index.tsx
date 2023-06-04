@@ -5,7 +5,7 @@ import "./style.scss";
 
 export default function ZenLayout({ children }: PropsWithChildren<unknown>): JSX.Element {
   return (
-    <div>
+    <div className="zen-layout">
       <Header type="zen" />
       <div className="page-content">{children}</div>
     </div>
