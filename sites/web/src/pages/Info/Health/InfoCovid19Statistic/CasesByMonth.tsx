@@ -2,7 +2,7 @@ import { Axis, Chart, Interval, Tooltip } from "bizcharts";
 import { useMemo } from "react";
 
 import { useSelector } from "@web/core/redux";
-import { selectLoading, selectMonthlyStatistic } from "@web/pages/OpenSource/selectors";
+import { selectLoading, selectMonthlyStatistic } from "@web/pages/Info/selectors";
 
 import Loading from "./Loading";
 

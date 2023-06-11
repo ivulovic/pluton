@@ -14,14 +14,16 @@ import { IntlProvider, defaultLocale } from "./core";
 import store from "./core/redux/utils/createStore";
 import AIPage from "./pages/AI";
 import Desktop from "./pages/Desktop";
+import InfoPage from "./pages/Info";
+import InfoCovid19Ambulances from "./pages/Info/Health/InfoCovid19Ambulances";
+import InfoCovid19Statistic from "./pages/Info/Health/InfoCovid19Statistic";
+import InfoAirQuality from "./pages/Info/Environment/InfoAirQuality";
+import InfoOverview from "./pages/Info/Overview";
 import OpenSourcePage from "./pages/OpenSource";
 import AirQuality from "./pages/OpenSource/Content/Environment/AirQuality";
 import Covid19Ambulances from "./pages/OpenSource/Content/Health/Covid19Ambulances";
 import Covid19Statistic from "./pages/OpenSource/Content/Health/Covid19Statistic";
 import OpenSourceOverview from "./pages/OpenSource/Content/Overview";
-import InfoCovid19Ambulances from "./pages/OpenSource/Info/Environment/InfoCovid19Ambulances";
-import InfoCovid19Statistic from "./pages/OpenSource/Info/Environment/InfoCovid19Statistic";
-import InfoAirQuality from "./pages/OpenSource/Info/Health/InfoAirQuality";
 import { ThemeProvider } from "./providers/Theme";
 
 const container = document.getElementById("root");
@@ -46,6 +48,32 @@ const router = createBrowserRouter([
     ),
   },
   {
+    path: "/info",
+    element: (
+      <DefaultLayout>
+        <InfoPage />
+      </DefaultLayout>
+    ),
+    children: [
+      {
+        path: "",
+        element: <InfoOverview />,
+      },
+      {
+        path: "covid-19-statistika",
+        element: <InfoCovid19Statistic />,
+      },
+      {
+        path: "covid-19-ambulante",
+        element: <InfoCovid19Ambulances />,
+      },
+      {
+        path: "kvalitet-vazduha",
+        element: <InfoAirQuality />,
+      },
+    ],
+  },
+  {
     path: "/open-source",
     element: (
       <DefaultLayout>
@@ -59,42 +87,15 @@ const router = createBrowserRouter([
       },
       {
         path: "covid-19-statistika",
-        children: [
-          {
-            path: "",
-            element: <Covid19Statistic />,
-          },
-          {
-            path: "info",
-            element: <InfoCovid19Statistic />,
-          },
-        ],
+        element: <Covid19Statistic />,
       },
       {
         path: "covid-19-ambulante",
-        children: [
-          {
-            path: "",
-            element: <Covid19Ambulances />,
-          },
-          {
-            path: "info",
-            element: <InfoCovid19Ambulances />,
-          },
-        ],
+        element: <Covid19Ambulances />,
       },
       {
         path: "kvalitet-vazduha",
-        children: [
-          {
-            path: "",
-            element: <AirQuality />,
-          },
-          {
-            path: "info",
-            element: <InfoAirQuality />,
-          },
-        ],
+        element: <AirQuality />,
       },
     ],
   },

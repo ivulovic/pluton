@@ -23,7 +23,29 @@ export function* getMonthlyCovid19Statistic(): SagaResult {
   }
 }
 
+export function* getCovid19Ambulances(): SagaResult {
+  try {
+    const url = `/api/v1/open-source/covid-19-ambulances`;
+    const response = yield call(request, url, makeGetReq());
+    yield put(actions.getCovid19AmbulancesDone(response));
+  } catch (e) {
+    //
+  }
+}
+
+export function* getAirQuality(): SagaResult {
+  try {
+    const url = `/api/v1/open-source/air-quality`;
+    const response = yield call(request, url, makeGetReq());
+    yield put(actions.getAirQualityDone(response));
+  } catch (e) {
+    //
+  }
+}
+
 export default function* saga(): Generator<unknown> {
+  yield takeEvery(actions.getAirQuality.type, getAirQuality);
+  yield takeEvery(actions.getCovid19Ambulances.type, getCovid19Ambulances);
   yield takeEvery(actions.getCovid19DailyStatistic.type, getDailyCovid19Statistic);
   yield takeEvery(actions.getCovid19MonthlyStatistic.type, getMonthlyCovid19Statistic);
 }

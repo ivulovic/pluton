@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 import { useDispatch } from "@web/core/redux";
 
-import { actions } from "../../../slice";
+import { actions } from "../../slice";
 
 import CasesByMonth from "./CasesByMonth";
 import CasesOvertime from "./CasesOvertime";
@@ -18,7 +18,7 @@ export default function InfoCovid19Statistic(): JSX.Element {
   }, []);
 
   return (
-    <div className="info">
+    <div className="info-content">
       <h1 className="section-title">COVID-19 statistika</h1>
       <h3 className="section-subtitle">Dnevni i mesečni podaci o statusu virusa Korona u Srbiji.</h3>
 

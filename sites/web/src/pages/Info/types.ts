@@ -60,7 +60,7 @@ export interface Ambulance {
   latitude: number;
   longitude: number;
 }
-export interface OpenSourceState {
+export interface InfoState {
   loading: {
     daily: boolean;
     monthly: boolean;
