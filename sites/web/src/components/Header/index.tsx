@@ -28,44 +28,15 @@ export default function Header(props: HeaderProps): JSX.Element {
   );
   const Links = (): JSX.Element => (
     <>
-      {/* //     <NavLink to="/apps" className="nav-item">
-  //       Apps
-  //     </NavLink>
-  //     <NavLink to="/finance" className="nav-item">
-  //       <FaCoins /> &nbsp; Finance
-  //     </NavLink>
-  //     <NavLink to="/news" className="nav-item">
-  //       <BiNews />
-  //       &nbsp; News
-  //     </NavLink>
-  //     <NavLink to="/health" className="nav-item">
-  //       Health
-  //     </NavLink>
-  //     <NavLink to="/sign-in" className="nav-item">
-  //       Sign In
-  //     </NavLink>
-  //     <NavLink to="/sign-in" className="nav-item">
-  //       Вештачка интелигенција
-  //     </NavLink>
-  //     <NavLink to="/sign-in" className="nav-item">
-  //       Artificial Inteligence
-  //     </NavLink>
-  //     <NavLink to="/sign-in" className="nav-item">
-  //       Плутон AI
-  //     </NavLink> */}
       <NavLink to="/ai" className="nav-item">
-        Pluton AI
+        AI
       </NavLink>
-
+      <NavLink to="/apps" className="nav-item">
+        Aplikacije
+      </NavLink>
       <NavLink to="/open-source" className="nav-item">
         Otvoreni podaci
       </NavLink>
-      {/* <NavLink to="/blog" className="nav-item">
-        Blog
-      </NavLink>
-      <NavLink to="/sign-in" className="nav-item">
-        Sign In
-      </NavLink> */}
     </>
   );
   return (

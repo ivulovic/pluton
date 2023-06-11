@@ -20,6 +20,7 @@ import Covid19Ambulances from "./pages/OpenSource/Content/Health/Covid19Ambulanc
 import Covid19Statistic from "./pages/OpenSource/Content/Health/Covid19Statistic";
 import OpenSourceOverview from "./pages/OpenSource/Content/Overview";
 import { ThemeProvider } from "./providers/Theme";
+import AppsPage from "./pages/Apps";
 
 const container = document.getElementById("root");
 
@@ -40,6 +41,14 @@ const router = createBrowserRouter([
       <ZenLayout>
         <AIPage />
       </ZenLayout>
+    ),
+  },
+  {
+    path: "/apps",
+    element: (
+      <DefaultLayout>
+        <AppsPage />
+      </DefaultLayout>
     ),
   },
   {

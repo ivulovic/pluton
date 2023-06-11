@@ -1,3 +1,5 @@
+import { APPS_SCOPE } from "@web/pages/Apps/constants";
+import { AppsState } from "@web/pages/Apps/types";
 import { THEME_SCOPE } from "@web/providers/Theme/slice/constants";
 import { IThemeState } from "@web/providers/Theme/slice/types";
 import { PERSISTED_SCOPE } from "@web/slices/persisted/constants";
@@ -7,4 +9,5 @@ export interface IRootState {
   normalKey: any;
   [PERSISTED_SCOPE]: PersistedState;
   [THEME_SCOPE]: IThemeState;
+  [APPS_SCOPE]: AppsState;
 }
