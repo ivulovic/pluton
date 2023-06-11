@@ -1,0 +1,32 @@
+import { useEffect } from "react";
+
+import { useDispatch } from "@web/core/redux";
+
+import { actions } from "../../../slice";
+
+import CasesByMonth from "./CasesByMonth";
+import CasesOvertime from "./CasesOvertime";
+import MonthlyCases from "./MonthlyCases";
+import RecentCases from "./RecentCases";
+
+export default function InfoCovid19Statistic(): JSX.Element {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(actions.getCovid19DailyStatistic());
+    dispatch(actions.getCovid19MonthlyStatistic());
+  }, []);
+
+  return (
+    <div className="info">
+      <h1 className="section-title">COVID-19 statistika</h1>
+      <h3 className="section-subtitle">Dnevni i mesečni podaci o statusu virusa Korona u Srbiji.</h3>
+
+      <div className="divider"></div>
+      <RecentCases />
+      <MonthlyCases />
+      <CasesOvertime />
+      <CasesByMonth />
+    </div>
+  );
+}

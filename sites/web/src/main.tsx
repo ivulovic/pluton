@@ -15,10 +15,13 @@ import store from "./core/redux/utils/createStore";
 import AIPage from "./pages/AI";
 import Desktop from "./pages/Desktop";
 import OpenSourcePage from "./pages/OpenSource";
-import AirQuality from "./pages/OpenSource/Content/Health/AirQuality";
+import AirQuality from "./pages/OpenSource/Content/Environment/AirQuality";
 import Covid19Ambulances from "./pages/OpenSource/Content/Health/Covid19Ambulances";
 import Covid19Statistic from "./pages/OpenSource/Content/Health/Covid19Statistic";
 import OpenSourceOverview from "./pages/OpenSource/Content/Overview";
+import InfoCovid19Ambulances from "./pages/OpenSource/Info/Environment/InfoCovid19Ambulances";
+import InfoCovid19Statistic from "./pages/OpenSource/Info/Environment/InfoCovid19Statistic";
+import InfoAirQuality from "./pages/OpenSource/Info/Health/InfoAirQuality";
 import { ThemeProvider } from "./providers/Theme";
 
 const container = document.getElementById("root");
@@ -56,15 +59,42 @@ const router = createBrowserRouter([
       },
       {
         path: "covid-19-statistika",
-        element: <Covid19Statistic />,
+        children: [
+          {
+            path: "",
+            element: <Covid19Statistic />,
+          },
+          {
+            path: "info",
+            element: <InfoCovid19Statistic />,
+          },
+        ],
       },
       {
         path: "covid-19-ambulante",
-        element: <Covid19Ambulances />,
+        children: [
+          {
+            path: "",
+            element: <Covid19Ambulances />,
+          },
+          {
+            path: "info",
+            element: <InfoCovid19Ambulances />,
+          },
+        ],
       },
       {
         path: "kvalitet-vazduha",
-        element: <AirQuality />,
+        children: [
+          {
+            path: "",
+            element: <AirQuality />,
+          },
+          {
+            path: "info",
+            element: <InfoAirQuality />,
+          },
+        ],
       },
     ],
   },
