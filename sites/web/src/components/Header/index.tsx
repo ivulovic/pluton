@@ -31,11 +31,14 @@ export default function Header(props: HeaderProps): JSX.Element {
       <NavLink to="/ai" className="nav-item">
         AI
       </NavLink>
-      <NavLink to="/apps" className="nav-item">
-        Aplikacije
+      <NavLink to="/aplikacije" className="nav-item">
+        APLIKACIJE
       </NavLink>
-      <NavLink to="/open-source" className="nav-item">
-        Otvoreni podaci
+      <NavLink to="/informacije" className="nav-item">
+        INFORMACIJE
+      </NavLink>
+      <NavLink to="/otvoreni-podaci" className="nav-item">
+        OTVORENI PODACI
       </NavLink>
     </>
   );
