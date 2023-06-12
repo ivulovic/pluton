@@ -3,7 +3,7 @@ import { useMemo } from "react";
 
 import { useSelector } from "@web/core/redux";
 import { selectDailyStatistic, selectLoading, selectMonthlyStatistic } from "@web/pages/Info/selectors";
-import { Statistic } from "@web/pages/OpenSource/types";
+import { Statistic } from "@web/pages/OpenData/types";
 
 import ChartCard from "./ChartCard";
 import Loading from "./Loading";

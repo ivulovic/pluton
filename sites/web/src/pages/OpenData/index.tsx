@@ -4,7 +4,7 @@ import "./style.scss";
 
 export default function OpenSourcePage(): JSX.Element {
   return (
-    <div className="open-source">
+    <div className="open-data">
       <Nav />
       <Content />
     </div>

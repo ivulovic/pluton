@@ -3,7 +3,7 @@ import "./style.scss";
 
 export default function Content(): JSX.Element {
   return (
-    <div className="open-source-content">
+    <div className="open-data-content">
       <Outlet />
     </div>
   );
