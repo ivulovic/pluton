@@ -3,7 +3,7 @@
         font-weight: 500;
         font-size: 0.9rem;
         padding: 0 0.5rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
     }
 
     & > .section-title:not(:first-child){
@@ -13,27 +13,18 @@
     .links{
         margin: 0rem 0;
         display: grid;
-        gap: 1rem;
-        grid-template-columns: 1fr 1fr 1fr;
         li{
             list-style: none;
             a{
                 display: grid;
                 gap: 1rem;
-                text-transform: uppercase;
-                align-items: center;
-                justify-content: center;
+                // text-transform: uppercase;
                 text-decoration: none;
-                padding: 3rem 5rem;
+                padding: 0.5rem 0.5rem;
                 font-size: 0.8rem;
                 opacity: 0.7;
                 transition: all 0.3s ease-in-out;
                 font-weight: 500;
-                svg{
-                    width: 100%;
-                    font-size: 2rem;
-                    text-align: center;
-                }
                 &.active{
                     background-color: var(--border);
                     opacity: 1;
@@ -42,7 +33,6 @@
                     background-color: var(--border);
                     opacity: 1;
                 }
-                border: 1px solid var(--border);
             }
         }
     }
