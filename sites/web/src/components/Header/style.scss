@@ -34,6 +34,7 @@ header.header {
     .nav-wrapper {
       display: flex;
       .nav-item {
+        text-transform: uppercase;
         color: var(--text);
         cursor: pointer;
         text-decoration: none;

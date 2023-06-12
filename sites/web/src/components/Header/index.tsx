@@ -54,11 +54,13 @@ export default function Header(props: HeaderProps): JSX.Element {
   //       Плутон AI
   //     </NavLink> */}
       <NavLink to="/ai" className="nav-item">
-        Pluton AI
+        AI
       </NavLink>
-
-      <NavLink to="/open-source" className="nav-item">
-        Otvoreni podaci
+      <NavLink to="/informacije" className="nav-item">
+        INFORMACIJE
+      </NavLink>
+      <NavLink to="/otvoreni-podaci" className="nav-item">
+        OTVORENI PODACI
       </NavLink>
       {/* <NavLink to="/blog" className="nav-item">
         Blog

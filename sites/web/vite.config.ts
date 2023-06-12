@@ -6,6 +6,11 @@ export default defineConfig({
   plugins: [react(), tsConfigPaths()],
   server: {
     proxy: {
+      "/api/v1": {
+        target: "https://pluton.rs",
+        changeOrigin: true,
+        // rewrite: (path) => path.replace(/^\/api/, ""),
+      },
       "/api": {
         target: "http://localhost:5001",
         changeOrigin: true,
