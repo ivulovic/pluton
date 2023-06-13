@@ -19,6 +19,17 @@
       font-size: 1.5rem;
       transform: rotate(-45deg);
     }
+    strong{
+      font-weight: 700;
+      white-space: nowrap;
+      text-transform: uppercase;
+      // font-weight: 100;
+      // font-family: 'Roboto', sans-serif;
+      // font-size: 0.625rem;
+      // position: relative;
+      // top: 4px;
+      color: var(--text-secondary);
+    }
     &.inline {
       gap: 0.65rem;
       flex-direction: row;

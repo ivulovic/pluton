@@ -1,17 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { NavLink, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import useOutsideClick from "@web/hooks/useOutsideClick";
 
-import Logo from "../Logo";
-
+import DefaultLinks from "./DefaultLinks";
+import DefaultLogo from "./DefaultLogo";
 import { HeaderProps } from "./types";
 
 import "./style.scss";
 
 export default function Header(props: HeaderProps): JSX.Element {
-  const { type = "default" } = props;
+  const { type = "default", links: Links = DefaultLinks, logo: Logo = DefaultLogo } = props;
   const location = useLocation();
   const navbarRef = useRef<any>();
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
@@ -26,54 +26,11 @@ export default function Header(props: HeaderProps): JSX.Element {
       <RxHamburgerMenu width={24} height={24} />
     </button>
   );
-  const Links = (): JSX.Element => (
-    <>
-      {/* //     <NavLink to="/apps" className="nav-item">
-  //       Apps
-  //     </NavLink>
-  //     <NavLink to="/finance" className="nav-item">
-  //       <FaCoins /> &nbsp; Finance
-  //     </NavLink>
-  //     <NavLink to="/news" className="nav-item">
-  //       <BiNews />
-  //       &nbsp; News
-  //     </NavLink>
-  //     <NavLink to="/health" className="nav-item">
-  //       Health
-  //     </NavLink>
-  //     <NavLink to="/sign-in" className="nav-item">
-  //       Sign In
-  //     </NavLink>
-  //     <NavLink to="/sign-in" className="nav-item">
-  //       Вештачка интелигенција
-  //     </NavLink>
-  //     <NavLink to="/sign-in" className="nav-item">
-  //       Artificial Inteligence
-  //     </NavLink>
-  //     <NavLink to="/sign-in" className="nav-item">
-  //       Плутон AI
-  //     </NavLink> */}
-      <NavLink to="/ai" className="nav-item">
-        AI
-      </NavLink>
-      <NavLink to="/informacije" className="nav-item">
-        INFORMACIJE
-      </NavLink>
-      <NavLink to="/otvoreni-podaci" className="nav-item">
-        OTVORENI PODACI
-      </NavLink>
-      {/* <NavLink to="/blog" className="nav-item">
-        Blog
-      </NavLink>
-      <NavLink to="/sign-in" className="nav-item">
-        Sign In
-      </NavLink> */}
-    </>
-  );
+
   return (
     <header className={`header ${type}`}>
       <div className="header-wrapper">
-        <Logo type="inline" />
+        <Logo />
         <div className="nav-wrapper">
           <Links />
         </div>
