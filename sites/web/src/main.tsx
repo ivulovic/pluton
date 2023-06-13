@@ -49,14 +49,14 @@ const router = createBrowserRouter([
       </ZenLayout>
     ),
   },
-  {
-    path: "/aplikacije",
-    element: (
-      <DefaultLayout>
-        <AppsPage />
-      </DefaultLayout>
-    ),
-  },
+  // {
+  //   path: "/apps",
+  //   element: (
+  //     <DefaultLayout>
+  //       <AppsPage />
+  //     </DefaultLayout>
+  //   ),
+  // },
   {
     path: "/open-data",
     element: (
