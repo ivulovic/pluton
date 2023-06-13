@@ -3,7 +3,7 @@ import withVisualizationLinks from "./withVisualizationLinks";
 function OverviewVisualization(): JSX.Element {
   return (
     <div className="info-content">
-      <h1 className="section-title">Informacije</h1>
+      <h1 className="section-title">Vizuelizacija</h1>
       <h3 className="section-subtitle">Vizuelizovani otvoreni podaci</h3>
       <div className="divider"></div>
 
