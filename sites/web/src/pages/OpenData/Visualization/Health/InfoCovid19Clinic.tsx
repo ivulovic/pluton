@@ -6,8 +6,9 @@ import { useDispatch, useSelector } from "@web/core/redux";
 
 import { selectAmbulances } from "../selectors";
 import { actions } from "../slice";
+import withVisualizationLinks from "../withVisualizationLinks";
 
-export default function InfoCovid19Ambulances(): JSX.Element {
+function Covid19Clinic(): JSX.Element {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(actions.getCovid19Ambulances());
@@ -136,3 +137,5 @@ export default function InfoCovid19Ambulances(): JSX.Element {
     </div>
   );
 }
+
+export default withVisualizationLinks(Covid19Clinic);

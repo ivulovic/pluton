@@ -1,4 +1,6 @@
-export default function InfoOverview(): JSX.Element {
+import withVisualizationLinks from "./withVisualizationLinks";
+
+function OverviewVisualization(): JSX.Element {
   return (
     <div className="info-content">
       <h1 className="section-title">Informacije</h1>
@@ -13,3 +15,5 @@ export default function InfoOverview(): JSX.Element {
     </div>
   );
 }
+
+export default withVisualizationLinks(OverviewVisualization);

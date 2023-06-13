@@ -6,8 +6,9 @@ import { useDispatch, useSelector } from "@web/core/redux";
 import { getAirQualityStatus, metrics } from "../constants";
 import { selectAirQuality } from "../selectors";
 import { actions } from "../slice";
+import withVisualizationLinks from "../withVisualizationLinks";
 
-export default function InfoAirQuality(): JSX.Element {
+function AirQuality(): JSX.Element {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(actions.getAirQuality());
@@ -111,3 +112,5 @@ export default function InfoAirQuality(): JSX.Element {
     </div>
   );
 }
+
+export default withVisualizationLinks(AirQuality);

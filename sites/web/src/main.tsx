@@ -9,22 +9,23 @@ import { translationMessages } from "@web/translations";
 
 import DefaultLayout from "./components/Layout/Default";
 import DesktopLayout from "./components/Layout/Desktop";
+import OpenDataLayout from "./components/Layout/OpenData";
 import ZenLayout from "./components/Layout/Zen";
 import { IntlProvider, defaultLocale } from "./core";
 import store from "./core/redux/utils/createStore";
 import AIPage from "./pages/AI";
 import AppsPage from "./pages/Apps";
 import Desktop from "./pages/Desktop";
-import InfoPage from "./pages/Info";
-import InfoAirQuality from "./pages/Info/Environment/InfoAirQuality";
-import InfoCovid19Ambulances from "./pages/Info/Health/InfoCovid19Ambulances";
-import InfoCovid19Statistic from "./pages/Info/Health/InfoCovid19Statistic";
-import InfoOverview from "./pages/Info/Overview";
 import OpenSourcePage from "./pages/OpenData";
-import AirQuality from "./pages/OpenData/Content/Environment/AirQuality";
-import Covid19Ambulances from "./pages/OpenData/Content/Health/Covid19Ambulances";
-import Covid19Statistic from "./pages/OpenData/Content/Health/Covid19Statistic";
-import OpenSourceOverview from "./pages/OpenData/Content/Overview";
+import AirQualityDocumentation from "./pages/OpenData/Documentation/Environment/AirQuality";
+import Covid19ClinicDocumentation from "./pages/OpenData/Documentation/Health/Covid19Clinic";
+import Covid19StatisticDocumentation from "./pages/OpenData/Documentation/Health/Covid19Statistic";
+import OverviewDocumentation from "./pages/OpenData/Documentation/Overview";
+import VisualizationPage from "./pages/OpenData/Visualization";
+import AirQualityVisualization from "./pages/OpenData/Visualization/Environment/AirQuality";
+import Covid19ClinicVisualization from "./pages/OpenData/Visualization/Health/InfoCovid19Clinic";
+import Covid19StatisticVisualization from "./pages/OpenData/Visualization/Health/InfoCovid19Statistic";
+import OverviewVisualization from "./pages/OpenData/Visualization/Overview";
 import { ThemeProvider } from "./providers/Theme";
 
 const container = document.getElementById("root");
@@ -57,54 +58,59 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/informacije",
+    path: "/open-data",
     element: (
-      <DefaultLayout>
-        <InfoPage />
-      </DefaultLayout>
-    ),
-    children: [
-      {
-        path: "",
-        element: <InfoOverview />,
-      },
-      {
-        path: "covid-19-statistika",
-        element: <InfoCovid19Statistic />,
-      },
-      {
-        path: "covid-19-ambulante",
-        element: <InfoCovid19Ambulances />,
-      },
-      {
-        path: "kvalitet-vazduha",
-        element: <InfoAirQuality />,
-      },
-    ],
-  },
-  {
-    path: "/otvoreni-podaci",
-    element: (
-      <DefaultLayout>
+      <OpenDataLayout>
         <OpenSourcePage />
-      </DefaultLayout>
+      </OpenDataLayout>
     ),
     children: [
       {
         path: "",
-        element: <OpenSourceOverview />,
+        element: <OverviewDocumentation />,
       },
       {
-        path: "covid-19-statistika",
-        element: <Covid19Statistic />,
+        path: "documentation",
+        children: [
+          {
+            path: "",
+            element: <OverviewDocumentation />,
+          },
+          {
+            path: "covid-19-statistic",
+            element: <Covid19StatisticDocumentation />,
+          },
+          {
+            path: "covid-19-clinic",
+            element: <Covid19ClinicDocumentation />,
+          },
+          {
+            path: "air-quality",
+            element: <AirQualityDocumentation />,
+          },
+        ],
       },
       {
-        path: "covid-19-ambulante",
-        element: <Covid19Ambulances />,
-      },
-      {
-        path: "kvalitet-vazduha",
-        element: <AirQuality />,
+        path: "visualization",
+        element: <VisualizationPage />,
+        children: [
+          {
+            path: "",
+            element: <OverviewVisualization />,
+          },
+          {
+            path: "covid-19-statistic",
+            element: <Covid19StatisticVisualization />,
+          },
+          {
+            path: "covid-19-clinic",
+            element: <Covid19ClinicVisualization />,
+          },
+          {
+            path: "air-quality",
+            element: <AirQualityVisualization />,
+          },
+        ],
       },
     ],
   },

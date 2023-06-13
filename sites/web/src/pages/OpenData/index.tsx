@@ -1,12 +1,5 @@
-import Content from "./Content";
-import Nav from "./Nav";
-import "./style.scss";
+import { Outlet } from "react-router-dom";
 
 export default function OpenSourcePage(): JSX.Element {
-  return (
-    <div className="open-data">
-      <Nav />
-      <Content />
-    </div>
-  );
+  return <Outlet />;
 }

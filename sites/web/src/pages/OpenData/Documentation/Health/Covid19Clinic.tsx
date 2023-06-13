@@ -1,4 +1,6 @@
-export default function Covid19Ambulances(): JSX.Element {
+import withDocumentationLinks from "../withDocumentationLinks";
+
+function Covid19Clinic(): JSX.Element {
   return (
     <div>
       <h1 className="section-title">COVID-19 ambulante</h1>
@@ -67,3 +69,5 @@ interface CovidAmbulance {
     </div>
   );
 }
+
+export default withDocumentationLinks(Covid19Clinic);

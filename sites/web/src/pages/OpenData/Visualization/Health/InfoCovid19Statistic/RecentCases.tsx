@@ -2,7 +2,7 @@ import { Area, Axis, Chart } from "bizcharts";
 import { useMemo } from "react";
 
 import { useSelector } from "@web/core/redux";
-import { selectDailyStatistic, selectLoading } from "@web/pages/Info/selectors";
+import { selectDailyStatistic, selectLoading } from "@web/pages/OpenData/Visualization/selectors";
 
 import ChartCard from "./ChartCard";
 import Loading from "./Loading";

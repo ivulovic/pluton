@@ -3,13 +3,14 @@ import { useEffect } from "react";
 import { useDispatch } from "@web/core/redux";
 
 import { actions } from "../../slice";
+import withVisualizationLinks from "../../withVisualizationLinks";
 
 import CasesByMonth from "./CasesByMonth";
 import CasesOvertime from "./CasesOvertime";
 import MonthlyCases from "./MonthlyCases";
 import RecentCases from "./RecentCases";
 
-export default function InfoCovid19Statistic(): JSX.Element {
+function Covid19Statistic(): JSX.Element {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -30,3 +31,5 @@ export default function InfoCovid19Statistic(): JSX.Element {
     </div>
   );
 }
+
+export default withVisualizationLinks(Covid19Statistic);

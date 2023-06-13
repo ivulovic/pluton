@@ -1,17 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { NavLink, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import useOutsideClick from "@web/hooks/useOutsideClick";
 
-import Logo from "../Logo";
-
+import DefaultLinks from "./DefaultLinks";
+import DefaultLogo from "./DefaultLogo";
 import { HeaderProps } from "./types";
 
 import "./style.scss";
 
 export default function Header(props: HeaderProps): JSX.Element {
-  const { type = "default" } = props;
+  const { type = "default", links: Links = DefaultLinks, logo: Logo = DefaultLogo } = props;
   const location = useLocation();
   const navbarRef = useRef<any>();
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
@@ -26,26 +26,11 @@ export default function Header(props: HeaderProps): JSX.Element {
       <RxHamburgerMenu width={24} height={24} />
     </button>
   );
-  const Links = (): JSX.Element => (
-    <>
-      <NavLink to="/ai" className="nav-item">
-        AI
-      </NavLink>
-      <NavLink to="/aplikacije" className="nav-item">
-        APLIKACIJE
-      </NavLink>
-      <NavLink to="/informacije" className="nav-item">
-        INFORMACIJE
-      </NavLink>
-      <NavLink to="/otvoreni-podaci" className="nav-item">
-        OTVORENI PODACI
-      </NavLink>
-    </>
-  );
+
   return (
     <header className={`header ${type}`}>
       <div className="header-wrapper">
-        <Logo type="inline" />
+        <Logo />
         <div className="nav-wrapper">
           <Links />
         </div>

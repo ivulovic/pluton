@@ -1,4 +1,6 @@
-export default function AirQuality(): JSX.Element {
+import withDocumentationLinks from "../withDocumentationLinks";
+
+function AirQuality(): JSX.Element {
   return (
     <div>
       <h1 className="section-title">Kvalitet vazduha</h1>
@@ -63,3 +65,5 @@ interface StationData {
     </div>
   );
 }
+
+export default withDocumentationLinks(AirQuality);

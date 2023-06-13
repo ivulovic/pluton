@@ -1,4 +1,6 @@
-export default function Covid19Statistic(): JSX.Element {
+import withDocumentationLinks from "../withDocumentationLinks";
+
+function Covid19Statistic(): JSX.Element {
   return (
     <div>
       <h1 className="section-title">COVID-19 statistika</h1>
@@ -144,3 +146,5 @@ interface MonthlyData {
     </div>
   );
 }
+
+export default withDocumentationLinks(Covid19Statistic);

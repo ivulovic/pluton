@@ -1,4 +1,6 @@
-export default function OpenSourceOverview(): JSX.Element {
+import withDocumentationLinks from "./withDocumentationLinks";
+
+function Overview(): JSX.Element {
   return (
     <div>
       <h1 className="section-title">Otvoreni podaci</h1>
@@ -23,3 +25,5 @@ export default function OpenSourceOverview(): JSX.Element {
     </div>
   );
 }
+
+export default withDocumentationLinks(Overview);
