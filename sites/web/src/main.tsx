@@ -16,6 +16,7 @@ import store from "./core/redux/utils/createStore";
 import AIPage from "./pages/AI";
 import AppsPage from "./pages/Apps";
 import Desktop from "./pages/Desktop";
+import FitPage from "./pages/Fit";
 import OpenSourcePage from "./pages/OpenData";
 import AirQualityDocumentation from "./pages/OpenData/Documentation/Environment/AirQuality";
 import Covid19ClinicDocumentation from "./pages/OpenData/Documentation/Health/Covid19Clinic";
@@ -46,6 +47,14 @@ const router = createBrowserRouter([
     element: (
       <ZenLayout>
         <AIPage />
+      </ZenLayout>
+    ),
+  },
+  {
+    path: "/fit",
+    element: (
+      <ZenLayout>
+        <FitPage />
       </ZenLayout>
     ),
   },
